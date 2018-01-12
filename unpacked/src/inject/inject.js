@@ -135,6 +135,10 @@ function displayGPA(gpa) {
 	container.append(gpaBox);
 }
 
+function displayGreeting() {
+	console.log(atob("ICAgICAgICAgICAgICBfIF8NCiAgICAgICAgICAgLi0vIC8gKQ0KICAgICAgICAgICB8LyAvIC8NCiAgICAgICAgICAgLy4nIC8NCiAgICAgICAgICAvLyAuLS0tLg0KICAgICAgICAgLyAgIC4tLS5fXCANCiAgICAgICAgLyAgICBgLS0nIC8NCiAgICAgICAvICAgICAuLS0tJw0KICAgICAgLyAgICAuJw0KICAgICAgICAgIC8="));
+}
+
 chrome.extension.sendMessage({}, function(response) {
 		var readyStateCheckInterval = setInterval(function() {
 		if (document.readyState === "complete") {
@@ -147,14 +151,13 @@ chrome.extension.sendMessage({}, function(response) {
 				var credits = findCredits(gradesTables);
 				var courses = findCourses(gradesTables);
 
-				console.log(grades);
-				console.log(credits);
-				console.log(courses);
-
 				var gpa = calculateGPA(grades,credits);
-				console.log(gpa);
+			
 				displayGPA(gpa);
 				dsiplayCreditsTable(grades, credits, courses);
+
+				console.log("Your GPA is " + gpa);
+				displayGreeting();
 
 			});
 
