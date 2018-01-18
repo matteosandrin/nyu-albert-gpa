@@ -78,7 +78,7 @@ function calculateGPA(grades, credits) {
 	return "Error: Credits and Grades are mismatched"
 }
 
-function dsiplayCreditsTable(grades, credits, courses) {
+function displayCreditsTable(grades, credits, courses) {
 	var totalGPA = 0;
 	var totalCredits = 0;
 	var table = $("<table></table>");
@@ -154,7 +154,7 @@ chrome.extension.sendMessage({}, function(response) {
 				var gpa = calculateGPA(grades,credits);
 			
 				displayGPA(gpa);
-				dsiplayCreditsTable(grades, credits, courses);
+				displayCreditsTable(grades, credits, courses);
 
 				console.log("Your GPA is " + gpa);
 				displayGreeting();
