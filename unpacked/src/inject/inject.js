@@ -132,6 +132,8 @@ function displayGPA(gpa) {
 	var gpaBox = document.createElement("div");
 	gpaBox.innerHTML = "<b>GPA</b>: " + gpa;
 	gpaBox.setAttribute("style","font-size: 12px; color: white; background-color: #57068c; padding-left: 10px; padding-right: 10px; margin-left: 0px; margin-right: 5px; display: inline-block; line-height: 30px;");
+	container.css("margin-left","10px");
+	container.css("margin-right","0px");
 	container.append(gpaBox);
 }
 
